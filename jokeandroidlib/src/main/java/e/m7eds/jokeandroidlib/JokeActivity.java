@@ -19,9 +19,11 @@ public class JokeActivity extends AppCompatActivity {
         tv_joke = findViewById(R.id.tv_joke);
 
         Intent intent = getIntent();
-        String joke = intent.getStringExtra("JOKE_KEY");
 
-        tv_joke.setText(joke);
+        if(intent.hasExtra("JOKE_KEY")){
+            String joke = intent.getStringExtra("JOKE_KEY");
+            tv_joke.setText(joke);
+        }
 
     }
 
